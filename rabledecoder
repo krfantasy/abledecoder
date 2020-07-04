@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+
+SRC_FOLDER=${1?"Usage: $0 SRC_FOLDER DST_FOLDER"}
+DST_FOLDER=${2?"Usage: $0 SRC_FOLDER DST_FOLDER"}
+
+CURRENT_FOLDER="$( pwd )"
+SRC_FOLDER=$( realpath "${SRC_FOLDER}" )
+DST_FOLDER=$( realpath "${DST_FOLDER}" )
+
+mkdir -p "${DST_FOLDER}"
+cd "${SRC_FOLDER}"
+
+find "." -name "*.aif" | while read filename
+do
+  directory="$(dirname "${filename}")"
+  mkdir -p "${DST_FOLDER}/${directory}"
+  dest="$( echo "${filename%.*}" )"
+  dest="${dest}.decoded.aif"
+  dest="${DST_FOLDER}/${dest}"
+  echo "${filename} -> ${dest}"
+  ${CURRENT_FOLDER}/abledecoder "${filename}" "${dest}"
+done
+
+cd "${CURRENT_FOLDER}"
+
