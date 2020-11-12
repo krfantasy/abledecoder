@@ -1,8 +1,10 @@
 # abledecoder
 
-decrypts Ableton DRM-protected *.aif files
+Decrypts Ableton DRM-protected *.aif files
 
 ## Installation
+
+This works on *nix like systems. Replace `apt` by your package provider and it should work. On Windows the easiest way to make this work is using Ubuntu Subsystem (TODO doc).
 
 Install dependencies, then run the build file.
 
@@ -26,7 +28,7 @@ The build script might fail with this error:
 ...
 ```
 
-Then change the [library linker flags order](https://stackoverflow.com/a/56658568) in the build script, placing `-lcrypto -lssl` at the end of the compiling command.
+Then change the [library linker flags order](https://stackoverflow.com/a/56658568) in the build script, placing `-lcrypto -lssl` at the end of the compiling command (see comment in build.sh).
 
 ## Usage
 
