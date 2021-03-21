@@ -1,6 +1,6 @@
 # abledecoder
 
-Decrypts Ableton DRM-protected *.aif files
+Decrypts Ableton DRM-protected `*.aif` files
 
 ## Installation
 

@@ -26,10 +26,6 @@ void FormChunk::readData(std::istream &input, std::streamoff dataStart, int32_t 
         std::streamoff subChunkDataStart = input.tellg();
         std::streamoff subChunkDataEnd = subChunkDataStart + subChunkDataSize + (subChunkDataSize % 2 == 1 ? 1 : 0);
 
-        if (subChunkDataSize < 0 || subChunkDataEnd > dataStart + dataSize) {
-            throw std::runtime_error("invalid data while parsing chunks");
-        }
-
         if (subChunkId == this->formatVersionChunk.getId()) {
             this->formatVersionChunk.readData(input, subChunkDataStart, subChunkDataSize);
         } else if (subChunkId == this->ableChunk.getId()) {
