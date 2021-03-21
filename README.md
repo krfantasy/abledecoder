@@ -4,7 +4,7 @@ Decrypts Ableton DRM-protected `*.aif` files
 
 ## Installation
 
-This works on *nix like systems. Replace `apt` by your package provider and it should work. On Windows the easiest way to make this work is using Ubuntu Subsystem (TODO doc).
+This works on `*nix` like systems. Replace `apt` by your package provider and it should work. On Windows the easiest way to make this work is using Ubuntu Subsystem (TODO doc).
 
 Install dependencies, then run the build file.
 
@@ -34,9 +34,21 @@ Then change the [library linker flags order](https://stackoverflow.com/a/5665856
 
 ```bash
 # Runs the abledecoder
-./abledecoder myaiffile.aif myaifile-decoded.aif
+./abledecoder my-aif-file.aif my-aif-file-decoded.aif
 
 # Runs the abledecoder on a hierrachy of folder
-./rabledecoder myaiffolder myaiffolder-decoded
+./rabledecoder my-aif-folder my-aif-folder-decoded
 ```
+
+If you want to convert the aif to wav (requires `ffmpeg`), will create `.wav` files along the `.aif` files:
+
+```bash
+./aif_to_wav my-aif-folder-decoded
+```
+
+You can then listen to the wav, make a selection, and save as m3u playlist, then execute the m3u playlist:
+
+```bash
+./m3u_copy my-m3u-playlist.m3u my-destination-folder
+```bash
 
