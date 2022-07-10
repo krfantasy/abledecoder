@@ -15,6 +15,9 @@ sudo apt install build-essential
 # Installs libssl for crypto functions
 sudo apt install libssl-dev
 
+# ffmpeg
+sudo apt install ffmpeg
+
 # Runs the build script
 ./build.sh
 ```
