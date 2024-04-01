@@ -28,7 +28,6 @@ The build script might fail with this error:
 /usr/bin/ld: AbleChunk.o: in function `AbleChunk::decryptKey(Array<unsigned char> const&)':
 /home/alex/Projects/abledecoder/AbleChunk.cpp:24: undefined reference to `EVP_CIPHER_CTX_new'
 /usr/bin/ld: /home/alex/Projects/abledecoder/AbleChunk.cpp:26: undefined reference to `EVP_bf_cbc'
-...
 ```
 
 Then change the [library linker flags order](https://stackoverflow.com/a/56658568) in the build script, placing `-lcrypto -lssl` at the end of the compiling command (see comment in build.sh).
@@ -100,7 +99,7 @@ Providers:
     name: OpenSSL Legacy Provider
     version: 3.0.2
     status: active
-``
+```
 
 ## Usage
 
