@@ -121,5 +121,5 @@ You can then listen to the wav, make a selection, and save as m3u playlist, then
 
 ```bash
 ./m3u_copy my-m3u-playlist.m3u my-destination-folder
-```bash
+```
 
